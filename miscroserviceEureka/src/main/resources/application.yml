@@ -1,0 +1,26 @@
+server:
+  port: 6868 #服务端口
+  
+spring:
+  application: 
+    name: microserviceEureka
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry:  true
+    serviceUrl:
+      defaultZone:  http://study:study123@127.0.0.1:6868/eureka/
+  server: 
+    enable-self-preservation: false #禁用自我保护模式
+    response-cache-update-interval-ms: 30000
+    response-cache-auto-expiration-in-seconds: 180
+    eviction-interval-timer-in-ms: 30000
+
+
+security: 
+  basic:  
+    enable: true #开启基于HTTP basic的认证
+  user: #配置用户的账号信息
+    name: study
+    password: study123

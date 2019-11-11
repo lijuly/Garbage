@@ -1,0 +1,17 @@
+server:
+  port: 8081 #服务端口
+  
+spring:
+  application: 
+    name: microserviceItem
+  
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    ServiceUrl:
+      defaultZone: http://study:study123@127.0.0.1:6868/eureka/
+    instance:
+      prefer-ip-address: true
+      ip-address: 127.0.0.1
+      instance-id: ${spring.application.name}:${server.port}

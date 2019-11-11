@@ -1,0 +1,25 @@
+server:
+  port: 8082 #服务端口
+
+itcast:
+  item:
+    url: http://127.0.0.1:8081/item/
+    
+spring:
+  application: 
+    name: microserviceOrder
+  
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    ServiceUrl:
+      defaultZone: http://study:study123@127.0.0.1:6868/eureka/
+    instance:
+      prefer-ip-address: true
+      ip-address: 127.0.0.1
+      instance-id: ${spring.application.name}:${server.port}
+
+microserviceItem:
+  ribbon:
+     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
